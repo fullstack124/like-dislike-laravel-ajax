@@ -32,7 +32,84 @@
                         <div class="item__left">
                             <h2>Total Sale</h2>
                             <div class="status__box__data">
-                                <h2>0</h2>
+                                <h2>{{ $sale }}</h2>
+                            </div>
+                        </div>
+                        <div class="item__right">
+                            <div class="status__box__img">
+                                <i class="fas fa-chart-bar fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="status__box-3 bg-style">
+                        <div class="item__left">
+                            <h2>Total Leads</h2>
+                            <div class="status__box__data">
+                                <h2>{{ $lead }}</h2>
+
+                            </div>
+                        </div>
+                        <div class="item__right">
+                            <div class="status__box__img">
+                                <i class="fas fa-chart-bar fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="status__box-3 bg-style">
+                        <div class="item__left">
+                            <h2>Total Sale User</h2>
+                            <div class="status__box__data">
+                                <h2>{{ $sale_user }}</h2>
+
+                            </div>
+                        </div>
+                        <div class="item__right">
+                            <div class="status__box__img">
+                                <i class="fas fa-chart-bar fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="status__box-3 bg-style">
+                        <div class="item__left">
+                            <h2>Total Designer User</h2>
+                            <div class="status__box__data">
+                                <h2>{{ $designer_user }}</h2>
+                            </div>
+                        </div>
+                        <div class="item__right">
+                            <div class="status__box__img">
+                                <i class="fas fa-chart-bar fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="status__box-3 bg-style">
+                        <div class="item__left">
+                            <h2>Total Production User</h2>
+                            <div class="status__box__data">
+                                <h2>{{ $production_user }}</h2>
+                            </div>
+                        </div>
+                        <div class="item__right">
+                            <div class="status__box__img">
+                                <i class="fas fa-chart-bar fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="status__box-3 bg-style">
+                        <div class="item__left">
+                            <h2>Total Shipping User</h2>
+                            <div class="status__box__data">
+                                <h2>{{ $shipping_user }}</h2>
                             </div>
                         </div>
                         <div class="item__right">

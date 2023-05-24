@@ -216,8 +216,9 @@
             @yield('content')
 
             <footer class="footer__area" style='    position: fixed;
-    bottom: 1px;
-    width: 100%;'>
+                    bottom: 1px;
+                    z-index:-1;
+                    width: 100%;'>
                 <div class="container-fluid"
                     style='display: flex;
     align-items: center;
@@ -254,10 +255,15 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-primary me-2"
                         data-bs-dismiss="modal">Cancel</button>
-                    <a href="{{ route('admin.logout') }}" class="btn btn-primary">Logout</a>
+                    @if (Auth::user()->role == 1)
+                        <a href="{{ route('admin.logout') }}" class="btn btn-primary">Logout</a>
+                    @else
+                        <a href="{{ route('admin.user.logout') }}" class="btn btn-primary">Logout</a>
+                    @endif
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <script src="{{ asset('admin/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('admin/js/popper.min.js') }}"></script>

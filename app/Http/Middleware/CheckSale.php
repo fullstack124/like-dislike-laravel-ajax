@@ -19,9 +19,10 @@ class CheckSale
         if (Auth::user()->role) {
             if (Auth::user()->role == 2) {
                 return $next($request);
-            } else {
-                return redirect(route('admin.dashboard'));
             }
+
+
+            return redirect(route('admin.dashboard'));
         }
     }
 }

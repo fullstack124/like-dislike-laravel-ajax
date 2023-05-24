@@ -16,18 +16,9 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.user.dashboard');
-    Route::get('/admin/logout', [DashboardController::class, 'logout'])->name('admin.logout');
-    
-    Route::get('/change/password', [AdminController::class, 'profile_view'])->name('admin.user.profile_view');
-    Route::post('/change/password', [AdminController::class, 'change_password'])->name('admin.user.change.password');
-
-    Route::get('/admin/profile_view', [AdminController::class, 'profile_view'])->name('admin.admin.profile_view');
-    Route::post('/admin/update/profile', [AdminController::class, 'update_profile'])->name('admin.update.profile');
-    Route::post('/admin/change/password', [AdminController::class, 'change_password'])->name('admin.change.password');
-
     Route::middleware(['super_admin'])->group(function () {
+        Route::get('/admin/logout', [DashboardController::class, 'logout'])->name('admin.logout');
+        Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
         Route::get('/admin/user/list', [AdminController::class, 'index'])->name('admin.user.index');
         Route::get('/admin/user/create', [AdminController::class, 'create'])->name('admin.user.create');
         Route::post('/admin/user/store', [AdminController::class, 'store'])->name('admin.user.store');
@@ -41,9 +32,16 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/admin/update/profile', [AdminController::class, 'update_profile'])->name('admin.update.profile');
         Route::post('/admin/change/password', [AdminController::class, 'change_password'])->name('admin.change.password');
 
+        Route::get('/admin/profile_view', [AdminController::class, 'profile_view'])->name('admin.admin.profile_view');
+        Route::post('/admin/update/profile', [AdminController::class, 'update_profile'])->name('admin.update.profile');
+        Route::post('/admin/change/password', [AdminController::class, 'change_password'])->name('admin.change.password');
     });
 
     Route::middleware(['sale'])->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.user.dashboard');
+        Route::get('/change/password', [AdminController::class, 'profile_view'])->name('admin.user.profile_view');
+        Route::post('/change/password', [AdminController::class, 'change_password'])->name('admin.user.change.password');
+        Route::get('/logout', [DashboardController::class, 'user_logout'])->name('admin.user.logout');
         Route::get('/lead/list', [LeadController::class, 'index'])->name('admin.lead.index');
         Route::get('/leads/create', [LeadController::class, 'create'])->name('admin.lead.create');
         Route::post('/lead/store', [LeadController::class, 'store'])->name('admin.lead.store');

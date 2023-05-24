@@ -19,9 +19,9 @@ class SuperAdmin
         if (Auth::user()->role) {
             if (Auth::user()->role == 1) {
                 return $next($request);
-            } else {
-                return redirect(route('admin.dashboard'));
-            }
+            } 
+
+            return redirect(route('admin.user.dashboard'));
         }
     }
 }
